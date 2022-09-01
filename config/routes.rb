@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # define routes for Primary Tech Stack
+  resources :primary_tech_stacks
+  # define routes for Secondary Tech Stack
+  resources :secondary_tech_stacks
 end

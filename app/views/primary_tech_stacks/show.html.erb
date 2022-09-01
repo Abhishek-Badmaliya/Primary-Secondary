@@ -1,0 +1,16 @@
+<h2 class="text-center mt-4">Primary Stack</h2><hr>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6 mt-4">
+      <div class=" text-center mb-5">
+        <p class="card-title"><strong>Stack : </strong><%= @primary_tech_stack.stack %><p>
+        <p class="card-title"><strong>Skills : </strong><%= @primary_tech_stack.skills %><p>
+        <p class="card-text"><strong>Generic Information : </strong><%= @primary_tech_stack.generic_info %></p><br>
+        <p class="card-text"><%= link_to 'Edit', edit_primary_tech_stack_path(@primary_tech_stack), class: "text-decoration-none btn btn-dark" %></p>
+        <p class="card-text"><%= button_to 'Delete', primary_tech_stack_path(@primary_tech_stack), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %></p>
+        <p class="card-text"> <%= link_to 'Back', { controller: 'primary_tech_stacks', action: 'index'}, class: "btn btn-primary" %> </p>
+      </div>
+    </div>
+  </div>
+</div>

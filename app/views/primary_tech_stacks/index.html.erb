@@ -1,0 +1,31 @@
+<h2 class = "text-center mt-4" >List of Primary Stacks</h2><br>
+<%= link_to "Add New", new_primary_tech_stack_path, class:"btn btn-secondary" %><br><br>
+
+<table class = "table table-bordered">
+  <thead class = "table-light text-center">
+    <tr>
+      <th> Stack </th>
+      <th> Skills </th>
+      <th> Generic Info </th>
+      <th> Action </th>
+    </tr>
+  </thead>
+  <tbody class = "text-center">
+    <% @primary_tech_stacks.each do |primary| %>
+      <tr>
+        <td><%= primary.stack %></td>
+        <td><%= primary.skills %></td>
+        <td><%= primary.generic_info %></td>
+        <div>
+          <td>
+            <div class="btn-group" role="group">
+              <%= link_to 'Show', primary_tech_stack_path(primary), class: "text-decoration-none btn btn-info" %>
+              <%= link_to 'Edit', edit_primary_tech_stack_path(primary), class: "text-decoration-none btn btn-dark" %>
+              <%= button_to 'Delete', primary_tech_stack_path(primary), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
+            </div>
+          </td>
+        </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

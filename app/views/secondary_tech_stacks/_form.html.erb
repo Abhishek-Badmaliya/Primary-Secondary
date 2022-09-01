@@ -1,0 +1,37 @@
+<% if @secondary_tech_stack.errors.any? %>
+  <h4> The following errors prevented the secondary stack details from being saved ! </h4>
+  <ul>
+    <% @secondary_tech_stack.errors.full_messages.each do |msg| %>
+      <li class = "text-danger"> <%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model:@secondary_tech_stack, local: true, data: {turbo: false}) do |f| %>
+  <div class = "field form-group" >
+    <strong><%= f.label :stack %></strong>
+    <%= f.text_field :stack, class:"form-control" %>
+  </div><br>
+  
+  <div class = "field form-group" >
+    <strong><%= f.label :skills %></strong>
+    <%= f.text_field :skills, class:"form-control" %>
+  </div><br>
+
+  <div class = "field form-group" >
+    <strong><%= f.label :generic_info %></strong>
+    <%= f.text_field :generic_info, class:"form-control" %>
+  </div><br>
+
+  <div class="text-center">
+    <div class = "action" >
+      <%= f.submit "Create Secondary Stack", class:"btn btn-success" %>
+    </div>
+  </div><br>
+
+  <div class="text-center">
+    <div class = "field form-group" >
+      <%= link_to 'Dismiss', { controller: 'secondary_tech_stacks', action: 'index'}, class: "btn btn-danger" %>
+    </div>
+  </div>
+<% end %>
